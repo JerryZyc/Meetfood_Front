@@ -13,7 +13,9 @@ const BOTTOM_TAB_ROUTES: Array<string> = [
 	AppHomeRouteName.FeedScreen,
 	AppRouteName.UploadScreen,
 	AppHomeRouteName.MeScreen,
+
 ];
+
 
 export type BottomTabBarProps = Pick<
 	RNBottomTabBarProps,
