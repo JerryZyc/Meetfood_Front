@@ -13,11 +13,15 @@ const BOTTOM_TAB_ROUTES: Array<string> = [
 	AppHomeRouteName.FeedScreen,
 	AppRouteName.UploadScreen,
 	AppHomeRouteName.MeScreen,
+
 ];
 
-const AUTHENTICATED_ROUTES_SET = new Set([
-	AppRouteName.UploadScreen,
-] as Array<string>);
+// <<<<<<< HEAD
+// const AUTHENTICATED_ROUTES_SET = new Set([
+// 	AppRouteName.UploadScreen,
+// ] as Array<string>);
+// =======
+// >>>>>>> c517bb26f6b419b7d1759ddc8274f315fb1f12da
 
 export type BottomTabBarProps = Pick<
 	RNBottomTabBarProps,
