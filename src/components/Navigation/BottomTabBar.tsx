@@ -16,11 +16,21 @@ const BOTTOM_TAB_ROUTES: Array<string> = [
 
 ];
 
+// <<<<<<< HEAD
+// const AUTHENTICATED_ROUTES_SET = new Set([
+// 	AppRouteName.UploadScreen,
+// ] as Array<string>);
+// =======
+// >>>>>>> c517bb26f6b419b7d1759ddc8274f315fb1f12da
 
 export type BottomTabBarProps = Pick<
 	RNBottomTabBarProps,
 	'navigation' | 'state'
 >;
+
+const mockIsAuthenticated = () => {
+	return false;
+};
 
 export const BottomTabBar: React.FC<BottomTabBarProps> = ({
 	navigation,
@@ -33,6 +43,14 @@ export const BottomTabBar: React.FC<BottomTabBarProps> = ({
 	const onSelect = useCallback(
 		(index: number) => {
 			const currentTab = BOTTOM_TAB_ROUTES[index];
+
+			if (AUTHENTICATED_ROUTES_SET.has(currentTab)) {
+				if (!mockIsAuthenticated()) {
+					navigate(AppRouteName.LoginScreen);
+					return;
+				}
+			}
+
 			navigate(currentTab);
 		},
 		[navigate],
